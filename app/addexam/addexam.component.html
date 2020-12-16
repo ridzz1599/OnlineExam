@@ -1,0 +1,23 @@
+<div class="container">
+  <form [formGroup]="addExamForm" (ngSubmit)="addExam()">
+      <div class="form-group">
+        <label for="name">Exam name:</label>
+        <input type="text" class="form-control" id="name" required [formControl]="examName"> 
+      </div>
+      <div class="form-group">
+        <label for="duration">Duration in minutes:</label>
+        <input type="number" class="form-control" id="duration" required [formControl]="duration"> 
+      </div>
+      <div class="form-group">
+        <label for="question">Number of questions:</label>
+        <input type="number" class="form-control" id="question" required [formControl]="question">
+      </div>
+      <div class="form-group">
+        <label for="passingmarks">passing marks:</label>
+          <input type="number" class="form-control" id="passingmarks" required [formControl]="passingmarks">
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" [disabled]="!addExamForm.valid">
+      </div>
+    </form>
+</div>
